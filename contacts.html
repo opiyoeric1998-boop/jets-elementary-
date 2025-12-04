@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Jets Elementary School</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Add this CSS to your existing style.css file */
+        :root {
+            --jets-blue: #1E6FA9;
+            --light-blue: #87CEEB;
+            --light-blue-light: #E6F7FF;
+            --school-white: #FFFFFF;
+            --text-dark: #2C3E50;
+        }
+
+        .school-footer {
+            background: linear-gradient(135deg, #1E6FA9 0%, #2C3E50 100%);
+            color: white;
+            margin-top: 50px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h4 {
+            color: #87CEEB;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            border-left: 3px solid #87CEEB;
+            padding-left: 10px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            border-radius: 50%;
+            border: 3px solid #87CEEB;
+        }
+
+        .footer-logo h3 {
+            color: #87CEEB;
+            font-size: 1.4em;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #87CEEB;
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #87CEEB;
+            padding-left: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: #87CEEB;
+            margin-top: 3px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #ccc;
+        }
+
+        .newsletter-form button {
+            background: #87CEEB;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #66C2FF;
+        }
+
+        .footer-bottom {
+            background: rgba(0,0,0,0.3);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom .footer-container {
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #87CEEB;
+        }
+
+        /* Contacts Page Specific Styles */
+        .contacts-header {
+            background: linear-gradient(135deg, #1E6FA9 0%, #87CEEB 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contacts-header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 3em;
+            color: #1E6FA9;
+            margin-bottom: 20px;
+        }
+
+        .contact-form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E6F7FF;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #87CEEB;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #1E6FA9 0%, #87CEEB 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            margin: 50px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .map-placeholder {
+            background: #E6F7FF;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1E6FA9;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .contacts-header h1 {
+                font-size: 2em;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add your existing navigation here -->
+
+    <header class="contacts-header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Get in touch with Jets Elementary School</p>
+    </header>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Visit Us</h3>
+            <p>Gesoko Estate, Manyatta<br>Kisumu, Kenya</p>
+        </div>
+
+        <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Call Us</h3>
+            <p>+254 727 549 629</p>
+        </div>
+
+        <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Us</h3>
+            <p>jetselementary@gmail.com</p>
+        </div>
+
+        <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <h3>Office Hours</h3>
+            <p>Monday - Friday: 7:00 AM - 5:00 PM<br>Saturday: 8:00 AM - 1:00 PM</p>
+        </div>
+    </div>
+
+    <div class="contact-form-container">
+        <div class="contact-form">
+            <h2>Send us a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="admissions">Admissions Inquiry</option>
+                        <option value="general">General Information</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add the footer here -->
+     <footer class="school-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <div class="footer-logo">
+                <img src="images/logo.png.jpg" alt="Jets Elementary School" width="80">
+                <h3>Jets Elementary School</h3>
+            </div>
+            <p>Inspiring young minds through quality education and nurturing care since 2023.</p>
+            <div class="social-links">
+                <a href="https://facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">School Menu</a></li>
+                <li><a href="contacts.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Gesoko Estate, Manyatta<br>Kisumu, Kenya</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+254 727 549 629</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>jetselementary@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon - Fri: 7:00 AM - 5:00 PM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p>&copy; 2025 Jets Elementary School. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

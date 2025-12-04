@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jets Elementary School - Weekly Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #87CEEB, #B3E0FF);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+        
+        .menu-table th {
+            background-color: #1E6FA9;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .menu-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0f0ff;
+            text-align: center;
+        }
+        
+        .menu-table tr:nth-child(even) {
+            background-color: #f5fbff;
+        }
+        
+        .menu-table tr:hover {
+            background-color: #e6f7ff;
+        }
+        
+        .day-header {
+            background-color: #87CEEB !important;
+            color: #1a1a1a;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 20px;
+        }
+        
+        .meal-type {
+            font-weight: bold;
+            color: #1E6FA9;
+            text-align: left;
+            width: 100px;
+        }
+        
+        .week-navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 25px;
+            background-color: #f0f8ff;
+            border-top: 1px solid #d0e8ff;
+        }
+        
+        .week-navigation button {
+            background-color: #87CEEB;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .week-navigation button:hover {
+            background-color: #66C2FF;
+        }
+        
+        .current-week {
+            font-weight: bold;
+            color: #1E6FA9;
+            align-self: center;
+        }
+        
+        footer {
+            background-color: #1E6FA9;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .allergy-note {
+            background-color: #fffacd;
+            padding: 10px 25px;
+            border-top: 1px solid #ffeb3b;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-table {
+                font-size: 0.9rem;
+            }
+            
+            .menu-table th, .menu-table td {
+                padding: 10px 5px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .menu-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .week-navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .week-navigation button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jets Elementary School</h1>
+            <div class="subtitle">Weekly Lunch Menu</div>
+        </header>
+        
+        <div class="week-navigation">
+            <button id="prev-term"><i class="fas fa-chevron-left"></i> Previous Term</button>
+            <div class="Term 3">Term 3, 2025</div>
+            <button id="next-term">Next Term <i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <table class="menu-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Snack</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="day-header">Monday</td>
+                    <td>
+                        <strong>Milk Tea</strong><br>
+                        Buttered Bread<br>
+                        
+                    </td>
+                    <td>
+                        <strong>Steamed Vegetables</strong><br>
+                        Rice<br>
+                        Beans<br>
+                        
+                    </td>
+                    <td>
+                        Orange Fruit<br>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day-header">Tuesday</td>
+                    <td>
+                        <stron>Milk Tea</stron></strong><br>
+                        African Doughnut(Mandazi)<br>
+                        
+                    </td>
+                    <td>
+                        <strong>French Fries</strong><br>
+                        Sausage<br>
+                        <br>
+                        Juice
+                    </td>
+                    <td>
+                        <br>
+                        Banana
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day-header">Wednesday</td>
+                    <td>
+                        <strong>Milk Tea</strong><br>
+                        Pancake<br>
+                        
+                    </td>
+                    <td>
+                        <strong>Rice</strong><br>
+                        Green Grams<br>
+                        Chapati<br>
+                        
+                    </td>
+                    <td>
+                        Watermelon<br>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day-header">Thursday</td>
+                    <td>
+                        <strong>Milk Tea</strong><br>
+                        Chapati<br>
+                        
+                    </td>
+                    <td>
+                        <strong>Ugali</strong><br>
+                        Stewed Meat<br>
+                        Steamed Vegetables<br>
+                        
+                    </td>
+                    <td>
+                        Orange<br>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day-header">Friday</td>
+                    <td>
+                        <strong>Milk Tea</strong><br>
+                        African Doughnuts(Mandazi)<br>
+                        
+                    </td>
+                    <td>
+                        <strong>Rice</strong><br>
+                        Green grams<br>
+                        Chapati<br>
+                        
+                    </td>
+                    <td>
+                        Watermelon<br>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="allergy-note">
+            <strong>Allergy Notice:</strong> Please inform the school of any food allergies. We offer vegetarian and gluten-free options upon request.
+        </div>
+        
+        <footer>
+            <p>Jets Elementary School &copy; 2025 | For more information, contact the school office at +254 727 549 629</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple week navigation functionality
+        document.getElementById('prev-week').addEventListener('click', function() {
+            alert('Showing previous week menu');
+            // In a real implementation, this would load the previous week's data
+        });
+        
+        document.getElementById('next-week').addEventListener('click', function() {
+            alert('Showing next week menu');
+            // In a real implementation, this would load the next week's data
+        });
+    </script>
+</body>
+</html>
